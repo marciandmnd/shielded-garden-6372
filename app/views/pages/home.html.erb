@@ -1,0 +1,18 @@
+<h1>Marcian Diamond</h1>
+	<table border="0" cellpadding = "10">
+		<tr>
+			<td><b>Project Name</b></td>
+			<td><b>Description</b></td>
+			<td><b>URL<b></td>
+		</tr>
+		<tr>
+			<td><%= @projectNames[0] %></td>
+			<td><%= @projectHash['project_0']['description'] %></td>
+			<td><a href = ""><%=@projectHash['project_0']['url'] %></a></td>
+		</tr>
+		<tr>
+			<td><%= @projectNames[1] %></td>
+			<td><%= @projectHash['project_1']['description'] %></td>
+			<td><a href = ""><%=@projectHash['project_1']['url'] %></a></td>
+		</tr>
+	</table>
