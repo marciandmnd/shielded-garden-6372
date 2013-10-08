@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Proj1</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+  <title>CSC667 Internet Application Development Projects by M.Diamond</title>
+	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	<%= csrf_meta_tags %>
 </head>
 <body>
+ <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="navbar-inner">
+        <div class="container">
+          <h3>CSC667: Internet Application Development</h3>
+      </div>
+    </header>
+    <div class="container">
+      <%= yield %>
+    </div>
+<!-- /.container -->
 
-<%= yield %>
 
+    <!-- Bootstrap core JavaScript
+    =========================
 </body>
 </html>

@@ -10,5 +10,6 @@ $projectData = YAML.load(fileName)
 
 module Proj1
   class Application < Rails::Application
+  	config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
   end
 end

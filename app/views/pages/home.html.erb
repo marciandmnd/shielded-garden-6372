@@ -1,19 +1,24 @@
 
-<h1>Marcian Diamond</h1>
-<table border="0" cellpadding = "10">
-	<tr>
-		<td><b>Project Name</b></td>
-		<td><b>Description</b></td>
-		<td><b>URL<b></td>
-	</tr>
-	
-	<% $projectData.each do |prj, data| %>
-		<tr>	
-			<td><%=prj%></td>
-			<td><%=data['description'] %></td>
-			<td><a href> <%=data['url']%></a></td>
-		</tr>
-	<%end%>	
-	
-</table>
+<h4>Marcian Diamond</h4>
+<div class="bs-docs-example">
+	<table class = "table">
+		<thead>
+			<tr>
+				<td><b>Project Name</b></td>
+				<td><b>Description</b></td>
+				<td><b>URL<b></td>
+			</tr>
+		</thead>
+		<tbody>
+			<% $projectData.each do |prj, data| %>
+				<tr>	
+					<td><%=prj%></td>
+					<td><%=data['description'] %></td>
+					<td><a href = "<%=data['url']%>"> <%=data['url']%></a></td>
+				</tr>
+			<%end%>	
+		</tbody>
+	</table>
+</div>
+
 <center><%= @current_time %></center>
