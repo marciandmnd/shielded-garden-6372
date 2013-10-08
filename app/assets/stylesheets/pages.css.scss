@@ -2,7 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$iconSpritePath: asset-url('glyphicons-halflings.png', image);
+$iconWhiteSpritePath: asset-url("glyphicons-halflings-white.png", image);
+
 @import "bootstrap";
+@import "bootstrap-responsive";
 
 //universal
 html {
