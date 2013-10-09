@@ -1,9 +1,25 @@
-<h4>How I did project 2 </h4>
-<h2>To insert the bootstrap framework into my rails project, I navigated to my project directory and opened the gemfile. <br>
-	<br>Using a text editor, I added the following line to the gemfile: <br>
+<h3>How I did project 2 </h3>
+<hr>
+<h4>INSERTING THE BOOTSTRAP FRAMEWORK</h4>
+<p>To insert the bootstrap framework into my rails project, I navigated to my project directory and opened the gemfile.
+	Using a text editor, I added the following line to the gemfile:</p>
 
-	<br><myCode>gem 'bootstrap-sass', '2.3.2.0'</myCode></br>
+	<myCode>gem 'bootstrap-sass', '2.3.2.0'</myCode>
 
-	<br>Next, I ran the command, </br>
-	<br><myCode>bundle install</myCode></br>
-</h2>
+	<p>Next, I ran the command,</p>
+	<myCode>bundle install</myCode>
+
+	<p>finally, I changed the following line in production.rb from:</p>
+	  
+  	<myCode>config.assets.compile = false</myCode> 
+  <p>to:</p>
+  <myCode>config.assets.compile = true</myCode>
+  <p>this is to fallback to assets pipeline if a precompiled asset is missed during deployment.</p>
+
+<hr>
+<h4>CONFIGURING ROUTES.RB</h4>
+<p>To allow a user of the site to visit the url, pages/project_2, routes.rb, which is located in the config directory, was modified.  The line:</p>
+	<myCode>  get "/pages/project_2", to: 'pages#project_2'</myCode>
+
+	<p>was added to routes.rb. Also, the actual project_2.html page was created and saved in the views/pages directory.
+
