@@ -12,3 +12,10 @@
  *= require bootstrap
  *= require_tree .
  */
+.navbar-inner a{
+	font-size: 50%;
+}
+
+.navbar-inner a:visited{
+	color: #FFFFFF;
+}

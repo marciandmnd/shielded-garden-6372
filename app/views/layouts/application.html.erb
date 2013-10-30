@@ -2,20 +2,21 @@
 <html>
 <head>
   <title>CSC667 Internet Application Development Projects by M.Diamond</title>
-	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	<%= stylesheet_link_tag    "application", media: "all"%>
+	<%= javascript_include_tag "application"%>
 	<%= csrf_meta_tags %>
 </head>
 <body>
  <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="navbar-inner">
         <div class="container">
-          <h3>CSC667: Internet Application Development</h3>
+          <h3>CSC667: Internet Application Development <a href="home" class ="pull-right">HOME</a></h3>
+        </div>
       </div>
-    </header>
-    <div class="container">
-      <%= yield %>
-    </div>
+  </header>
+  <div class="container">
+    <%= yield %>
+  </div>
 <!-- /.container -->
 
 

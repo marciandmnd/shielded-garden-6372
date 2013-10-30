@@ -1,0 +1,14 @@
+// Place all the styles related to the Calendars controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.week_cell td{
+	height: 50px;
+	opacity:1;
+}
+
+
+.calendar td{
+	background-color: #AFEEEE;
+	color: black;
+}
