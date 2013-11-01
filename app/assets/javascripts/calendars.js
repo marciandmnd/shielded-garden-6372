@@ -29,14 +29,16 @@ function getDaysInMonth(month,year)
    return new Date(year, month + 1, 0).getDate();
 }
 
-function fillCalendar(firstDay, days){
+function fillCalendar(firstDayOfMonth, days){
+	var firstDay = firstDayOfMonth;
 	var day_num = 1;
 	for(var i = 0; i < days; i++){
-		$('#day_cell_' + firstDay).append(day_num++);
-		firstDay++;
+		$('#day_cell_' + firstDayOfMonth).append(day_num++);
+		firstDayOfMonth++;
 	}	
 	if($('#month').html() == months[currentMonth] && $('#year').html() == currentYear){
-		$('#day_cell_'+ (currentDate+1)).css('background-color','#FF6633')
+		//window.alert();
+		$('#day_cell_'+ (currentDate+firstDay-1)).css('background-color','#FF6633')
 	}else $('.calendar td').css('background-color','#AFEEEE');
 }
 
@@ -46,11 +48,11 @@ $(document).ready(function(){
 	$('#year').append(currentYear);
 	var daysInMonth = getDaysInMonth(monthIndex, currentYear);
 	fillCalendar(first_day_of_month, daysInMonth);
-
+	//window.alert(first_day_of_month);
 	$('.calendar td').mouseenter(function(){
 		var this_id = $(this).attr('id');
 		//window.alert(this_id);
-		if(this_id == 'day_cell_' + (currentDate+1) && $('#month').html() == months[currentMonth] && $('#year').html() == currentYear){
+		if(this_id == 'day_cell_' + (currentDate+first_day_of_month-1) && $('#month').html() == months[currentMonth] && $('#year').html() == currentYear){
 			$(this).css('background-color', '#FF3333');
 			//window.alert('hovering over current date');
 		}else
@@ -60,13 +62,14 @@ $(document).ready(function(){
 	$('.calendar td').mouseleave(function(){
 		var this_id = $(this).attr('id');
 		//window.alert(this_id);
-		if(this_id == 'day_cell_' + (currentDate+1) && $('#month').html() == months[currentMonth] && $('#year').html() == currentYear){
+		if(this_id == 'day_cell_' + (currentDate+first_day_of_month-1) && $('#month').html() == months[currentMonth] && $('#year').html() == currentYear){
 			$(this).css('background-color', '#FF6633');
 			//window.alert('hovering over current date');
 		}else
 		$(this).css('background-color', '#AFEEEE');
 	});
 
+	//click previous year
 	$('#previous_year').on("click", function(){
 		year = year-1;
 		$('#year').html(year);	
@@ -78,6 +81,8 @@ $(document).ready(function(){
 		//window.alert("test");
 		fillCalendar(first_day_of_month, daysInMonth);		
 	});
+
+	//click next month
 	$('#previous_month').on("click", function(){
 		if(monthIndex == 0){
 			monthIndex = 11;

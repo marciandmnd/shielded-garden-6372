@@ -1,4 +1,6 @@
 Proj1::Application.routes.draw do
+  resources :appointments
+
   resources :calendars
 
   get "pages/home"
