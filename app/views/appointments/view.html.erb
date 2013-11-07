@@ -22,7 +22,7 @@
 		<h5>No appointments for this month and year!</h5>
 	<%else%> 
 		<table class = "table">
-			<% 	@appointments.each do |appointment| %>
+			<% 	@appointments.sort_by{|e| [e[:year], e[:day], e[:time]] }.each do |appointment| %>
 				<% if appointment.month == (params[:month].to_i-1) && appointment.year == params[:year].to_i%>
 				<tr>
 					<td><strong>Time: </strong><%= appointment.time %></td>

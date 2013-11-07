@@ -1,5 +1,5 @@
 <h1>Listing appointments</h1>
-<p><h4>To filter appointments by month and year add month and year arguments to the URL:</h4>
+<p><h4>To filter appointments by month and year, add month and year parameters to the URL:</h4>
     <h5>.../appointments/[month]/[year]<br>
     <font color = "red">Example:</font> http://shielded-garden-6372.herokuapp.com/appointments/11/2013</h5></p><hr>
 
@@ -18,7 +18,7 @@
   </thead>
 
   <tbody>
-    <% @appointments.each do |appointment| %>
+    <% @appointments.sort_by{|e| [e[:year], e[:day], e[:time]] }.each do |appointment| %>
       <tr>
         <td><%= appointment.time %></td>
         <td><%= appointment.day %></td>
