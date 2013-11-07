@@ -1,0 +1,42 @@
+<% puts params[:year].is_i? %>
+<% puts "yaaay" %>
+<% if params[:month].to_i <= 12 && params[:month].to_i >= 1 && (params[:year].is_i?)%>
+	<% months = {
+		1=>"January",
+		2=>"February",
+		3=>"March",
+		4=>"April",
+		5=>"May",
+		6=>"June",
+		7=>"July",
+		8 =>"August",
+		9 =>"September",
+		10=>"October", 
+		11=>"November",
+		12=>"December"} 
+	%>
+
+	<h4>View Appointments for <%= months[params[:month].to_i]%> <%= params[:year] %></h4>
+	<hr> 
+	<% if @appointments.empty? %>
+		<h5>No appointments for this month and year!</h5>
+	<%else%> 
+		<table class = "table">
+			<% 	@appointments.each do |appointment| %>
+				<% if appointment.month == (params[:month].to_i-1) && appointment.year == params[:year].to_i%>
+				<tr>
+					<td><strong>Time: </strong><%= appointment.time %></td>
+					<td><strong>Day: </strong><%= appointment.day %></td>
+					<td><strong>Description: </strong> <%= appointment.description %></td>
+				</tr>
+				<%end%>
+			<% end %>
+		</table>
+	<%end%>
+<%else%>
+	<script>
+		window.alert("Invalid month and/or year argument(s)!\nMonth must be from 1 to 12!\n Year must be a number!");
+		//window.history.back(-1);
+		window.location.href = '/appointments';
+	</script>	
+<%end%>

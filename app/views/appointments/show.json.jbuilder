@@ -1,1 +1,1 @@
-json.extract! @appointment, :created_at, :updated_at
+json.extract! @appointment, :time, :day, :month, :year, :description, :created_at, :updated_at

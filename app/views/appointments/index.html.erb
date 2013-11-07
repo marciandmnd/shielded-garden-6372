@@ -1,8 +1,16 @@
 <h1>Listing appointments</h1>
+<p><h4>To filter appointments by month and year add month and year arguments to the URL:</h4>
+    <h5>.../appointments/[month]/[year]<br>
+    <font color = "red">Example:</font> http://shielded-garden-6372.herokuapp.com/appointments/11/2013</h5></p><hr>
 
-<table>
+<table class ="table">
   <thead>
     <tr>
+      <th>Time</th>
+      <th>Day</th>
+      <th>Month</th>
+      <th>Year</th>
+      <th>Description</th>
       <th></th>
       <th></th>
       <th></th>
@@ -12,6 +20,11 @@
   <tbody>
     <% @appointments.each do |appointment| %>
       <tr>
+        <td><%= appointment.time %></td>
+        <td><%= appointment.day %></td>
+        <td><%= appointment.month.to_i + 1 %></td>
+        <td><%= appointment.year %></td>
+        <td><%= appointment.description %></td>
         <td><%= link_to 'Show', appointment %></td>
         <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>
         <td><%= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td>

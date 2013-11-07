@@ -2,13 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.week_cell td{
-	height: 50px;
-	opacity:1;
-}
-
-
 .calendar td{
+	height: 50px;
+	width: 10%;
 	background-color: #AFEEEE;
 	color: black;
+}
+
+.align_top_left{
+	vertical-align:top;
+	text-align:left;
 }

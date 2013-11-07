@@ -1,3 +1,9 @@
+  class String
+    def is_i?
+       !!(self =~ /^[-+]?[0-9]+$/)
+    end
+  end
+
 class AppointmentsController < ApplicationController
   before_action :set_appointment, only: [:show, :edit, :update, :destroy]
 
@@ -11,7 +17,13 @@ class AppointmentsController < ApplicationController
   # GET /appointments/1.json
   def show
   end
+  
+  # GET /appointment/:month/:year
+  def view
+     @appointments = Appointment.where("month = ? AND year = ?", params[:month].to_i-1, params[:year]);
+     #Client.where("orders_count = ? AND locked = ?", params[:orders], false)
 
+  end
   # GET /appointments/new
   def new
     @appointment = Appointment.new
@@ -69,6 +81,6 @@ class AppointmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def appointment_params
-      params[:appointment]
+      params.require(:appointment).permit(:time, :day, :month, :year, :description)
     end
 end

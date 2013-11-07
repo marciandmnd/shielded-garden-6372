@@ -1,5 +1,5 @@
 
-<div class = "calendar">
+<div class = "calendar" id = "calendar">
 
 <h3>calendar</h3>
 
@@ -24,16 +24,13 @@
 
 <table border = "2" width="100%">
   <thead>
-      <tr>
-        <th id="previous_year"><<</th>
-        <th id = "previous_month"><</th>
-        <th colspan="3"><div id="month"></div><div id ="year"></div></th>
-        <th id="next_month">></th>
-        <th id="next_year">>></th>
-      </tr>
-  </thead>
-
-  <thead>
+    <tr>
+      <th id="previous_year"><<</th>
+      <th id = "previous_month"><</th>
+      <th colspan="3"><div id="month"></div><div id ="year"></div></th>
+      <th id="next_month">></th>
+      <th id="next_year">>></th>
+    </tr>
     <tr>
       <th>Sun</th>
       <th>Mon</th>
@@ -44,16 +41,10 @@
       <th>Sat</th>
     </tr>
   </thead>
-  <script>
-    <!--generate calendar day cells-->
-    var dayCellNum = 0;
-    for(var i=0; i<6;i++){
-      document.write('<tr class= week_cell>')
-      for(var k = 0; k < 7; k++){
-        document.write('<td id = \"day_cell_' + dayCellNum++ +'\"></td>');
-      }
-      document.write('</tr>');
-    }
-  </script>
+  <tbody id ="table_body">
+  </tbody>
  </table> 
 </div>
+<script>
+ //window.alert("js works here");
+</script>

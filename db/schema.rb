@@ -11,13 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131101205804) do
+ActiveRecord::Schema.define(version: 20131102222843) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "adminpack"
 
   create_table "appointments", force: true do |t|
+    t.string   "time"
+    t.integer  "day"
+    t.integer  "month"
+    t.integer  "year"
+    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
