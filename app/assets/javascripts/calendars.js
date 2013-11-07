@@ -77,15 +77,6 @@ $(document).ready(function(){
 	//get days in month and fill calendar
 	fillCalendar(first_day_of_month, daysInMonth);
 	//mouse cursor enters a day cell
-	/*
-	$('.calendar tbody td').on("mouseenter", function(){
-		var this_day = $(this).attr('data-day');
-		//window.alert("mouseEnter data-day: " + this_day);
-		if(this_day == currentDate && $('#month').html() == months[currentMonth] && $('#year').html() == currentYear){
-			$(this).css('background-color', '#FF3333');
-		}else
-			$(this).css('background-color', '#B0C4DE');
-	});*/
 
 	$( '.calendar tbody' ).delegate( "td", "mouseenter", function() {
 		var this_day = $(this).attr('data-day');
@@ -183,7 +174,6 @@ $(document).ready(function(){
 				  	type: "POST",
 				  	url: "/appointments",
 				  	data: JSON.stringify({ "appointment": {time: $('#time').val(), day: dayNum, month: monthIndex, year: year ,description: formInput} }),
-			 		success: function(data) { alert('data: ' + data); },
     				contentType: "application/json",
 			 		dataType: "json"
 				})
