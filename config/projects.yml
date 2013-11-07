@@ -1,12 +1,12 @@
 project_0:
   url: "/"
-  description: "Environment Set Up"
+  description: "Environment set up"
 project_1:
   url: "/"
-  description: "Custom Home Page Route"
+  description: "Custom home page route"
 project_2:
   url: "/pages/project_2"
   description: "Description of Bootstrap set up"
-project_3:
+project_3/4:
   url: "/calendar"
-  description: "A basic interactive calendar (non-persistent)"
+  description: "A basic interactive calendar"
