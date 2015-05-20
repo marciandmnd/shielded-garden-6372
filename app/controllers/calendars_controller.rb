@@ -5,6 +5,7 @@ class CalendarsController < ApplicationController
   # GET /calendars.json
   def index
     @calendars = Calendar.all
+    @current_time = Time.now
   end
 =begin
   # GET /calendars/1

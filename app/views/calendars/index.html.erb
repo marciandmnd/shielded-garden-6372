@@ -1,10 +1,9 @@
 
 <div class = "calendar" id = "calendar">
-
-<h3>calendar</h3>
-
+<h3 style="display:inline;">Calendar</h3><p style="float:right;display:inline;"><strong>Current Time: </strong><%=@current_time%></p>
+<hr/>
 <form id='addEventForm'>
-  <br>Time:<br>
+  <strong>Time:</strong><br>
   <select id ="time" style="width: 100px">
     <!-- populate time dropdown menu -->
     <script>
@@ -18,18 +17,18 @@
       }
     </script>
   </select>
-  <br>Description:<br>
+  <br><strong>Description:</strong><br>
   <input type="text" name="description" id="description"><br>
 </form>
 
 <table border = "2" width="100%" >
   <thead>
     <tr>
-      <th id="previous_year"><<</th>
-      <th id = "previous_month"><</th>
+      <th id="previous_year" class="pointer"><<</th>
+      <th id = "previous_month" class="pointer"><</th>
       <th colspan="3"><div id="month"></div><div id ="year"></div></th>
-      <th id="next_month">></th>
-      <th id="next_year">>></th>
+      <th id="next_month" class="pointer">></th>
+      <th id="next_year" class="pointer">>></th>
     </tr>
     <tr>
       <th>Sun</th>
@@ -45,6 +44,10 @@
   </tbody>
  </table> 
  <div class = "padTop">
- <a class = "btn btn-default" href = "/appointments">View All Appointments</a>
+<form action="/appointments">
+    <input class="btn btn-primary" href="/appointments" type="submit" value="View All Appointments">
+</form>
+<center><strong>Current time is: </strong><%= @current_time %></center>
+
 </div>
 </div>

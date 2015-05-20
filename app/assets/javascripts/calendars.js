@@ -69,7 +69,11 @@ function addEvents(data){
 }
 
 $(document).ready(function(){
-
+	$('.pointer').on("mouseenter", function(){
+		$(this).css("background-color", "#FFA366")
+	}).on("mouseleave", function(){
+		$(this).css("background-color", "#FFFFFF")
+	});
 	//add month and year labels to view
 	$('#month').append(months[monthIndex]);
 	$('#year').append(currentYear);

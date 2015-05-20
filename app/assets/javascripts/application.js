@@ -14,4 +14,12 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
+$(document).ready(function(){
+	//todo animate heading color
+	$('#app_heading').on("mouseenter",function(){
+		//$(this).css("color", "#CCE6FF");
+	}).on("mouseleave", function(){
+		//$(this).css("color", "#CCE6FF");
+	});
+});
 
