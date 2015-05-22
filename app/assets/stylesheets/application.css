@@ -12,10 +12,14 @@
  *= require bootstrap
  *= require_tree .
  */
-.navbar-inner a{
-	font-size: 50%;
+.content{
+	margin-top: 25px;
 }
-
-.navbar-inner a:visited{
-	color: #FFFFFF;
+#app_heading{
+	color:#FF8080;
+	display: inline-block;
+}
+#app_heading_author{
+	color: #FFE066;
+	display:inline-block;
 }

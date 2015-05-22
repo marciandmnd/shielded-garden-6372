@@ -17,9 +17,15 @@
 $(document).ready(function(){
 	//todo animate heading color
 	$('#app_heading').on("mouseenter",function(){
-		//$(this).css("color", "#CCE6FF");
+		$(this).css("color", "red");
 	}).on("mouseleave", function(){
-		//$(this).css("color", "#CCE6FF");
+		$(this).css("color", "#FF8080");
+	});
+
+	$('#app_heading_author').on("mouseenter",function(){
+		$(this).css("color", "#FFFF00");
+	}).on("mouseleave", function(){
+		$(this).css("color", "#FFE066");
 	});
 });
 

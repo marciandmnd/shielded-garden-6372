@@ -10,15 +10,15 @@
  <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="navbar-inner">
         <div class="container">
-          <h3 id="app_heading">Internet Application Development with RoR 
-            <a href="/home" class ="pull-right">
-              <font color ="FFFFFF">HOME</font>
-            </a>
-          </h3>
+          <%= link_to image_tag("RubyOnRails.png", :alt => "RoR", :size => '50'), "http://rubyonrails.org/" %>
+          <a href="/home">
+            <h3 id="app_heading">Internet Application Development with RoR</h3>
+          </a>
+            <a href="http://github.com/marciandmnd" target="_new"><h4 id="app_heading_author">by Marcian Diamond</h4></a>
         </div>
       </div>
   </header>
-  <div class="container">
+  <div class="container content">
     <%= yield %>
   </div>
 <!-- /.container -->
